@@ -27,7 +27,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   background: rgba(32, 152, 157, 0.26);
-  border-radius: 16px;
+  border-radius: 5px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5.4px);
   overflow: hidden;
