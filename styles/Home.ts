@@ -9,4 +9,13 @@ const StyledBackground = styled.div`
   width: 100%;
 `;
 
+export const StyledBackgroundInverse = styled.div`
+  background: url('/about-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+`;
+
 export default StyledBackground;

@@ -47,7 +47,7 @@ const HeaderDiv = styled.div<HeaderDivProps>`
     direction === 'right' ? 'translateX(-100%)' : 'translateX(100%)'};
   animation: ${({ direction }) =>
       direction === 'right' ? slideRight : slideLeft}
-    1.5s ease-in-out forwards;
+    0.7s ease-in-out forwards;
 `;
 
 export default HeaderDiv;
