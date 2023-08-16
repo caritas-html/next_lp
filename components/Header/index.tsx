@@ -12,12 +12,12 @@ export default function Header() {
     <HeaderContainer className={kanit.className}>
       <HeaderDiv direction="right">
         <InsideHeaderDiv $sidebar="flex-end">
-          <h1>Leonardo Lima</h1>
+          <h1>LEONARDO LIMA</h1>
         </InsideHeaderDiv>
       </HeaderDiv>
       <HeaderDiv direction="left">
         <InsideHeaderDiv $sidebar="flex-start">
-          <h1>FullStack Developer</h1>
+          <h1>FULLSTACK DEVELOPER</h1>
         </InsideHeaderDiv>
       </HeaderDiv>
     </HeaderContainer>

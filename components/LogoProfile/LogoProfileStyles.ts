@@ -6,6 +6,11 @@ const ProfilePhoto = styled.img`
   object-fit: cover;
   border-radius: 50%;
   filter: grayscale(100%);
+
+  &:hover {
+    filter: grayscale(0%);
+    transition: 0.5s;
+  }
 `;
 
 export default ProfilePhoto;
