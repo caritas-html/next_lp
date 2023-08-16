@@ -23,13 +23,9 @@ const slideLeft = keyframes`
 `;
 
 export const HeaderContainer = styled.div`
-  height: 100px;
+  height: 15vh;
   display: flex;
   flex-wrap: wrap;
-  background: rgba(32, 152, 157, 0.26);
-  border-radius: 5px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5.4px);
   overflow: hidden;
 `;
 
@@ -43,7 +39,7 @@ export const InsideHeaderDiv = styled.div<{ $sidebar?: string }>`
 const HeaderDiv = styled.div<HeaderDivProps>`
   background: rgba(0, 0, 0, 0.7);
   width: 50%;
-  height: 100px;
+  height: 15vh;
   display: flex;
   align-items: center;
   padding: 0 20px;
@@ -51,7 +47,7 @@ const HeaderDiv = styled.div<HeaderDivProps>`
     direction === 'right' ? 'translateX(-100%)' : 'translateX(100%)'};
   animation: ${({ direction }) =>
       direction === 'right' ? slideRight : slideLeft}
-    1s ease-in-out forwards;
+    1.5s ease-in-out forwards;
 `;
 
 export default HeaderDiv;
