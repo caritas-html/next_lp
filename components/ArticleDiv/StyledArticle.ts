@@ -1,10 +1,19 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 interface ArticleDivProps {
   align: string;
   justify: string;
   textAlign: string;
 }
+
+const slowAppear = keyframes`
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+`;
 
 export default styled.article<ArticleDivProps>`
   width: 30%;
@@ -14,13 +23,15 @@ export default styled.article<ArticleDivProps>`
   align-items: ${({ align }) => align};
   justify-content: ${({ justify }) => justify};
   text-align: ${({ textAlign }) => textAlign};
-  color: #000;
+  color: #fff;
   font-weight: bold;
   font-size: 1.3rem;
 
+  animation: ${slowAppear} 1s ease-in-out;
+  transition: 0.5s;
+
   &:hover {
     cursor: pointer;
-    color: #fff;
     transition: 0.5s;
   }
 `;

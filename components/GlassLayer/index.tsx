@@ -8,11 +8,16 @@ import ArticleDiv from '../ArticleDiv';
 export default function GlassLayer() {
   const [isClicked, setIsClicked] = useState(false);
 
+  const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    e.preventDefault();
+    setIsClicked(true);
+  };
+
   return (
     <StyledGlassLayer>
       <div>
         {!isClicked ? (
-          <LogoContainer onClick={(e) => setIsClicked(true)}>
+          <LogoContainer onClick={(e) => handleClick(e)}>
             <Logo />
           </LogoContainer>
         ) : (
@@ -33,10 +38,9 @@ export default function GlassLayer() {
             <ArticleDiv align="flex-end" justify="flex-end" textAlign="right">
               Minha jornada pelo mundo do desenvolvimento tem sido cativante,
               marcada por uma variedade de projetos e tecnologias. Seja criando
-              interfaces de usuário intuitivas com VueJS, explorando as
-              complexidades de bancos de dados ou oferecendo suporte a projetos
-              globais, estou dedicado a trazer inovação e eficiência para tudo
-              que faço.
+              interfaces de usuário intuitivas, explorando as complexidades de
+              bancos de dados ou oferecendo suporte a projetos globais, estou
+              dedicado a trazer inovação e eficiência para tudo que faço.
             </ArticleDiv>
           </LogoContainer>
         )}

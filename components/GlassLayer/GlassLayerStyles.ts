@@ -6,19 +6,18 @@ interface LogoContainerProps {
 
 const slideDown = keyframes`
   from {
-		transform: translateY(-100%);
+		opacity: 0;
 	}
 	to {
-		transform: translateY(0);
+		opacity: 0.95;
 	}
 `;
 
 const StyledGlassLayer = styled.div`
-  background: rgba(167, 236, 239, 0.5);
+  background: url('/bg-02.svg') no-repeat center center/cover;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(5.4px);
   height: 85vh;
-  filter: grayscale(40%);
+  filter: grayscale(70%);
 
   display: flex;
   flex-direction: column;

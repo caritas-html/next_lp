@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 interface HeaderDivProps {
   direction: string;
@@ -37,7 +37,7 @@ export const InsideHeaderDiv = styled.div<{ $sidebar?: string }>`
 `;
 
 const HeaderDiv = styled.div<HeaderDivProps>`
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.85);
   width: 50%;
   height: 15vh;
   display: flex;
