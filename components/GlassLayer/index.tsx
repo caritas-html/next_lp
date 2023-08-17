@@ -47,7 +47,6 @@ export default function GlassLayer() {
                 para tudo que faço.
               </ArticleDiv>
             </LogoContainer>
-            <DownButton />
           </>
         )}
       </div>
