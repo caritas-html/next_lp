@@ -1,20 +1,26 @@
-import styled from 'styled-components';
-import { useInView } from 'react-intersection-observer';
+import { useEffect, useState } from 'react';
+import styled, { keyframes } from 'styled-components';
 
-const SlideWrapper = styled.div`
+const slideIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
+const SlideWrapper = styled.div<{ isVisible: boolean }>`
   width: 100%;
   height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: ${({ isVisible }) => (isVisible ? slideIn : 'none')} 0.7s
+    ease-in-out forwards;
   opacity: 0;
-  transform: translateX(-100%);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-
-  &.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
 `;
 
 interface SlideAnimationProps {
@@ -22,13 +28,27 @@ interface SlideAnimationProps {
 }
 
 export default function SlideAnimation({ children }: SlideAnimationProps) {
-  const { ref, inView } = useInView({
-    threshold: 0.4,
-    triggerOnce: true,
-  });
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const slideLeft = document.getElementById('slideLeft');
+      if (slideLeft) {
+        const rect = slideLeft.getBoundingClientRect();
+        setIsVisible(rect.top <= window.innerHeight && rect.bottom >= 0);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <SlideWrapper ref={ref} className={inView ? 'visible' : ''}>
+    <SlideWrapper id="slideLeft" isVisible={isVisible}>
       {children}
     </SlideWrapper>
   );

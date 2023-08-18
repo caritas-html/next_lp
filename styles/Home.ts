@@ -10,11 +10,11 @@ const StyledBackground = styled.div`
 `;
 
 export const StyledBackgroundInverse = styled.div`
-  background: url('/about-bg.png');
+  background: url('/bg-03.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 200vh;
   width: 100%;
 `;
 

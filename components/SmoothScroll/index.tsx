@@ -8,7 +8,7 @@ interface SmoothScrollProps {
 export default function SmoothScroll({ to, children }: SmoothScrollProps) {
   return (
     <>
-      <Link to={to} smooth={true} duration={700} offset={100}>
+      <Link to={to} smooth={true} duration={700} offset={0}>
         {children}
       </Link>
     </>

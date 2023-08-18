@@ -36,6 +36,7 @@ const LogoContainer = styled.div`
   height: 530px;
   margin: 0 auto;
   cursor: pointer;
+  flex-wrap: wrap;
 
   overflow: hidden;
 `;

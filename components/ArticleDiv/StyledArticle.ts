@@ -26,6 +26,7 @@ export default styled.article<ArticleDivProps>`
   color: #fff;
   font-weight: bold;
   font-size: 1.3rem;
+  min-width: 280px;
 
   animation: ${slowAppear} 1s ease-in-out;
   transition: 0.5s;
