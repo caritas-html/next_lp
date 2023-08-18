@@ -14,7 +14,7 @@ export const StyledBackgroundInverse = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 150vh;
+  height: fit-content;
   width: 100%;
 `;
 
