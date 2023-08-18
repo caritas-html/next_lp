@@ -14,7 +14,7 @@ export default function SpacerTitle({
 }: SpacerTitleProps) {
   return (
     <>
-      <SlideAnimation direction="down">
+      <SlideAnimation direction="visible">
         <SpacerTitleLayer className={className} id={id}>
           <h3>{children}</h3>
         </SpacerTitleLayer>

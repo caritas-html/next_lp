@@ -50,7 +50,7 @@ const SlideWrapper = styled.div<{ isVisible: boolean; direction: string }>`
         case 'right':
           return isVisible ? slideRight : 'none';
         default:
-          return 'none';
+          return 'visible';
       }
     }}
     0.7s ease-in forwards;
@@ -68,25 +68,21 @@ export default function SlideAnimation({
   direction,
 }: SlideAnimationProps) {
   const [isVisible, setIsVisible] = useState(false);
-
   useEffect(() => {
-    const handleScroll = () => {
-      const slide = document.getElementById('slide');
-      if (slide) {
-        const rect = slide.getBoundingClientRect();
-        // prevents animation from playing again when scrolling
-        if (rect.top > window.innerHeight || rect.bottom < 0) {
-          setIsVisible(false);
-          return;
-        }
+    let animationTriggered = false;
 
-        setIsVisible(rect.top <= window.innerHeight && rect.bottom >= 0);
+    const handleScroll = () => {
+      const slideElement = document.getElementById('slide');
+      if (!animationTriggered && slideElement) {
+        const rect = slideElement.getBoundingClientRect();
+        if (rect.top <= window.innerHeight) {
+          setIsVisible(true);
+          animationTriggered = true;
+        }
       }
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll();
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
