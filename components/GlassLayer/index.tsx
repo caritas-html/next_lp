@@ -6,12 +6,17 @@ import LogoProfile from '../LogoProfile';
 import ArticleDiv from '../ArticleDiv';
 import DownButton from '../Buttons/ButtonDown';
 
-export default function GlassLayer() {
+interface GlassLayerProps {
+  logoClick: (state: boolean) => void;
+}
+
+export default function GlassLayer({ logoClick }: GlassLayerProps) {
   const [isClicked, setIsClicked] = useState(false);
 
   const handleClick = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
     e.preventDefault();
     setIsClicked(true);
+    logoClick(true);
   };
 
   return (

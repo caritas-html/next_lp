@@ -6,6 +6,8 @@ import SmoothScroll from '../components/SmoothScroll';
 import SpacerTitle from '../components/SpacerTitle';
 import StyledBackground, { StyledBackgroundInverse } from '../styles/Home';
 import { Kanit } from 'next/font/google';
+import useLockScroll from '../hooks/useLockScroll';
+import { useEffect, useState } from 'react';
 
 const kanit = Kanit({
   subsets: ['latin'],
@@ -14,17 +16,30 @@ const kanit = Kanit({
 });
 
 export default function Home() {
+  const { isLocked, lockScroll, unlockScroll } = useLockScroll();
+  const [logoClick, setLogoClick] = useState(false);
+
+  const handleLogoClick = (state: boolean) => {
+    setLogoClick(state);
+  };
+
+  useEffect(() => {
+    lockScroll();
+  }, []);
+
   return (
     <div className={kanit.className}>
       <StyledBackground id="top">
         <Header />
-        <GlassLayer />
+        <GlassLayer logoClick={handleLogoClick} />
       </StyledBackground>
       <SmoothScroll to="about">
-        <DownButton />
+        {logoClick && <DownButton onClick={unlockScroll} />}
       </SmoothScroll>
-      <SpacerTitle id="about">SOBRE</SpacerTitle>
-      <StyledBackgroundInverse>
+      <SpacerTitle className="glass" id="about">
+        SOBRE
+      </SpacerTitle>
+      <StyledBackgroundInverse className="glass">
         <About />
       </StyledBackgroundInverse>
     </div>

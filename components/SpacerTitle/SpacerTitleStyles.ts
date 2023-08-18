@@ -1,13 +1,12 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const SpacerTitleLayer = styled.div`
-  background: url('div-bg-05.svg');
+  background: url('div-bg-06.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100px;
   width: 100%;
-  border: 1px solid #f2f2;
 
   display: flex;
   flex-direction: column;
@@ -15,7 +14,7 @@ const SpacerTitleLayer = styled.div`
   align-items: center;
 
   & > h3 {
-    color: #f1f1f1;
+    color: #fff;
     font-size: 2rem;
     font-weight: 500;
     text-align: center;

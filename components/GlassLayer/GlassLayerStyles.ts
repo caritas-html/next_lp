@@ -1,9 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 
-interface LogoContainerProps {
-  isClicked: boolean;
-}
-
 const slideDown = keyframes`
   from {
 		opacity: 0;
